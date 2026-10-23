@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#080d1d">
+    <meta name="description" content="SEBY AI STUDIO - Votre espace créatif avec intelligence artificielle.">
+
+    <title>SEBY AI STUDIO | Création IA</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <a class="brand" href="#">
+            <span class="brand-icon">✦</span>
+
+            <span>
+                SEBY <b>AI STUDIO</b>
+                <small>CREATIVE INTELLIGENCE</small>
+            </span>
+        </a>
+
+        <button class="nav active" data-view="home">
+            ⌂ <span>Accueil</span>
+        </button>
+
+        <button class="nav" data-view="image">
+            ▧ <span>Générateur d'images</span>
+        </button>
+
+        <button class="nav" data-view="video">
+            ▶ <span>Studio vidéo</span>
+            <em>Bientôt</em>
+        </button>
+
+        <button class="nav" data-view="logo">
+            ✧ <span>Créateur de logos</span>
+        </button>
+
+        <button class="nav" data-view="writing">
+            ✎ <span>Assistant rédaction</span>
+        </button>
+
+        <div class="sidebar-bottom">
+
+            <div class="mini-card">
+                <span class="mini-orb">✦</span>
+
+                <b>Libérez votre créativité</b>
+
+                <p>
+                    Un espace pour donner vie à vos idées.
+                </p>
+            </div>
+
+            <div class="profile">
+
+                <span class="avatar">S</span>
+
+                <span>
+                    <b>Utilisateur</b>
+                    <small>Plan découverte</small>
+                </span>
+
+                <button id="aboutBtn">•••</button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <header class="header">
+
+            <button class="mobile-menu" id="menuBtn">
+                ☰
+            </button>
+
+            <div class="crumb">
+                Workspace
+                <span>/</span>
+                <b id="crumbTitle">Accueil</b>
+            </div>
+
+            <div class="header-right">
+
+                <span class="status">
+                    <i></i>
+                    Studio prêt
+                </span>
+
+                <button class="profile-btn">S</button>
+
+            </div>
+
+        </header>
+
+        <!-- WELCOME -->
+        <section class="welcome" id="welcome">
+
+            <div class="welcome-text">
+
+                <div class="eyebrow">
+                    <span>✦</span>
+                    VOTRE ESPACE CRÉATIF IA
+                </div>
+
+                <h1>
+                    Imaginez. Créez.
+                    <br>
+                    <span>Donnez vie à vos idées.</span>
+                </h1>
+
+                <p>
+                    Bienvenue dans SEBY AI STUDIO,
+                    votre espace pour explorer la création
+                    assistée par intelligence artificielle.
+                </p>
+
+            </div>
+
+            <div class="welcome-art">
+
+                <div class="ring ring1"></div>
+                <div class="ring ring2"></div>
+
+                <div class="crystal">✦</div>
+
+                <span class="spark s1">✧</span>
+                <span class="spark s2">✦</span>
+
+                <span class="art-label">
+                    CREATIVE
+                    <br>
+                    ENGINE
+                </span>
+
+            </div>
+
+        </section>
+
+        <!-- TOOLS -->
+        <section class="tools-section">
+
+            <div class="section-title">
+
+                <div>
+                    <span class="eyebrow">
+                        COMMENCEZ À CRÉER
+                    </span>
+
+                    <h2>
+                        Que souhaitez-vous créer ?
+                    </h2>
+                </div>
+
+                <span class="muted">
+                    Choisissez un outil
+                </span>
+
+            </div>
+
+            <div class="tools-grid">
+
+                <button class="tool-card" data-tool="image">
+
+                    <span class="tool-icon image-icon">▧</span>
+
+                    <span class="tool-tag">VISUEL</span>
+
+                    <h3>Générateur d'images</h3>
+
+                    <p>
+                        Transformez une description
+                        en concept visuel.
+                    </p>
+
+                    <span class="card-arrow">↗</span>
+
+                </button>
+
+                <button class="tool-card" data-tool="video">
+
+                    <span class="tool-icon video-icon">▶</span>
+
+                    <span class="tool-tag">MOUVEMENT</span>
+
+                    <h3>Studio vidéo</h3>
+
+                    <p>
+                        Préparez des idées et
+                        scénarios vidéo IA.
+                    </p>
+
+                    <span class="soon">Bientôt</span>
+
+                    <span class="card-arrow">↗</span>
+
+                </button>
+
+                <button class="tool-card" data-tool="logo">
+
+                    <span class="tool-icon logo-icon">✧</span>
+
+                    <span class="tool-tag">IDENTITÉ</span>
+
+                    <h3>Créateur de logos</h3>
+
+                    <p>
+                        Imaginez une identité visuelle
+                        pour votre marque.
+                    </p>
+
+                    <span class="card-arrow">↗</span>
+
+                </button>
+
+                <button class="tool-card" data-tool="writing">
+
+                    <span class="tool-icon writing-icon">✎</span>
+
+                    <span class="tool-tag">TEXTE</span>
+
+                    <h3>Assistant rédaction</h3>
+
+                    <p>
+                        Rédigez, reformulez et
+                        développez vos idées.
+                    </p>
+
+                    <span class="card-arrow">↗</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- STUDIO -->
+        <section class="studio hidden" id="studio">
+
+            <div class="studio-heading">
+
+                <button id="backHome" class="back">
+                    ← Retour
+                </button>
+
+                <div>
+
+                    <span class="eyebrow" id="studioEyebrow">
+                        OUTIL CRÉATIF
+                    </span>
+
+                    <h2 id="studioTitle">
+                        Générateur d'images
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="studio-layout">
+
+                <!-- EDITOR -->
+                <div class="editor panel">
+
+                    <label for="prompt">
+                        Votre description
+                    </label>
+
+                    <textarea
+                        id="prompt"
+                        rows="6"
+                        placeholder="Décrivez votre idée avec le plus de détails possible..."
+                    ></textarea>
+
+                    <div class="prompt-hint">
+                        Conseil : précisez le sujet,
+                        le style, l'ambiance et les couleurs.
+                    </div>
+
+                    <label for="styleSelect">
+                        Style créatif
+                    </label>
+
+                    <select id="styleSelect">
+
+                        <option value="cinématique">
+                            Cinématique
+                        </option>
+
+                        <option value="réaliste">
+                            Réaliste
+                        </option>
+
+                        <option value="illustration">
+                            Illustration
+                        </option>
+
+                        <option value="3D">
+                            3D
+                        </option>
+
+                        <option value="minimaliste">
+                            Minimaliste
+                        </option>
+
+                    </select>
+
+                    <button class="generate-btn" id="generateBtn">
+
+                        <span>✦</span>
+
+                        Préparer la création
+
+                        <b>→</b>
+
+                    </button>
+
+                    <p class="disclaimer">
+                        Mode démonstration : la génération réelle
+                        nécessite une API IA configurée côté serveur.
+                    </p>
+
+                </div>
+
+                <!-- RESULT -->
+                <div class="result panel">
+
+                    <div class="result-top">
+
+                        <span>
+                            APERÇU DU PROJET
+                        </span>
+
+                        <span class="result-badge">
+                            DEMO
+                        </span>
+
+                    </div>
+
+                    <div id="resultArea" class="result-area">
+
+                        <div class="placeholder-art">
+
+                            <div class="placeholder-sun"></div>
+
+                            <div class="placeholder-mountain m1"></div>
+
+                            <div class="placeholder-mountain m2"></div>
+
+                            <span>✦</span>
+
+                        </div>
+
+                        <h3>
+                            Votre espace de création
+                        </h3>
+
+                        <p>
+                            Votre description et les paramètres
+                            apparaîtront ici.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- RECENT PROJECTS -->
+        <section class="recent">
+
+            <div class="section-title">
+
+                <div>
+
+                    <span class="eyebrow">
+                        VOTRE ESPACE
+                    </span>
+
+                    <h2>
+                        Créations récentes
+                    </h2>
+
+                </div>
+
+                <button id="clearRecent" class="text-button">
+                    Effacer l'historique
+                </button>
+
+            </div>
+
+            <div id="recentGrid" class="recent-grid">
+
+                <div class="empty-recent">
+                    Vos projets préparés apparaîtront ici.
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+
+            © <span id="year"></span>
+            SEBY AI STUDIO
+
+            <span>•</span>
+
+            Conçu pour votre créativité
+
+        </footer>
+
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
