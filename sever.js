@@ -1,113 +1,42 @@
 
-require("dotenv").config();
-
 const express = require("express");
 const path = require("path");
 
 const app = express();
-
 const PORT = process.env.PORT || 3000;
 
-// Middleware
-app.use(express.json({
-    limit: "1mb"
-}));
+app.use(express.json());
+app.use(express.static(path.join(__dirname, "public")));
 
-// Fichiers publics
-app.use(express.static(
-    path.join(__dirname, "public")
-));
-
-// Vérifier le serveur
 app.get("/api/health", (req, res) => {
-
-    res.json({
-
-        ok: true,
-
-        app: "SEBY AI STUDIO",
-
-        message: "Le serveur fonctionne correctement."
-
-    });
-
+  res.json({
+    status: "ok",
+    name: "SEBY AI STUDIO"
+  });
 });
 
-// Préparer une création
 app.post("/api/generate", (req, res) => {
+  const { prompt, mode, style } = req.body || {};
 
-    const {
-        prompt,
-        mode,
-        style
-    } = req.body || {};
-
-    if (!prompt || !String(prompt).trim()) {
-
-        return res.status(400).json({
-
-            error: "Veuillez saisir une description."
-
-        });
-
-    }
-
-    const validModes = [
-        "image",
-        "logo",
-        "writing",
-        "video"
-    ];
-
-    if (!validModes.includes(mode)) {
-
-        return res.status(400).json({
-
-            error: "Type de création invalide."
-
-        });
-
-    }
-
-    res.json({
-
-        demo: true,
-
-        mode,
-
-        style: style || "cinématique",
-
-        prompt: String(prompt).trim(),
-
-        message:
-            "Votre demande a été préparée. " +
-            "Connectez une API IA côté serveur " +
-            "pour générer le résultat réel."
-
+  if (!prompt || !prompt.trim()) {
+    return res.status(400).json({
+      error: "Veuillez entrer une description."
     });
+  }
 
+  res.json({
+    success: true,
+    mode: mode || "image",
+    style: style || "default",
+    prompt: prompt.trim(),
+    message: "Votre demande a été reçue. La génération IA réelle nécessite une API."
+  });
 });
 
-// Page principale
-app.get("*", (req, res) => {
-
-    res.sendFile(
-        path.join(__dirname, "public", "index.html")
-    );
-
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// Démarrage
-app.listen(PORT, () => {
-
-    console.log("--------------------------------");
-
-    console.log("       SEBY AI STUDIO");
-
-    console.log("--------------------------------");
-
-    console.log(
-        `Serveur : http://localhost:${PORT}`
-    );
-
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`SEBY AI STUDIO lancé sur le port ${PORT}`);
 });
